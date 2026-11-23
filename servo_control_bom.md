@@ -1,0 +1,20 @@
+# Bill of Materials (BOM) – 6-Servo ESP32 & PCA9685 Project
+
+| Item | Component | Specification / Notes | Qty | Unit | Buy Link (AliExpress) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | **MG995 Servo Motor** | Metal gear, high torque (4.8–7.2 V) | 3 | Pcs | [AliExpress Item](https://fr.aliexpress.com/item/4000262871946.html) |
+| **2** | **MG90S Servo Motor** | Micro metal gear servo (4.8–6 V) | 3 | Pcs | [AliExpress Item](https://fr.aliexpress.com/item/32844869330.html) |
+| **3** | **PCA9685 Servo Driver** | 16-channel, 12-bit PWM I²C controller | 1 | Pcs | [AliExpress Item](https://fr.aliexpress.com/item/32466332558.html) |
+| **4** | **External Servo Power Supply** | 5 V–6 V DC, ≥ 5 A (handles stall current for 6 servos) | 1 | Pcs | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-5v-5a-dc-power-supply.html) |
+| **5** | **Jumper Wires** | Dupont kit (Male-to-Female & Female-to-Female, 20 cm) | 1 | Set | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-dupont-jumper-wires-set.html) |
+| **6** | **Electrolytic Capacitor** | 1000 µF–2200 µF, ≥ 10 V–16 V (mounts on PCA9685 V+ rail) | 1 | Pcs | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-1000uf-16v-electrolytic-capacitor.html) |
+| **7** | **ESP32 Development Board** | ESP32-WROOM-32 DevKit (30-pin or 38-pin, I²C capable) | 1 | Pcs | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-esp32-development-board.html) |
+| **8** | **Servo Mounting Hardware** | Aluminum U-brackets, multi-purpose brackets & M3 screws for MG995 | 1 | Set | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-mg995-servo-bracket.html) |
+
+---
+
+## Assembly & Power Notes
+
+* **Power Supply Sizing:** Three MG995 servos can draw up to **1.2 A–1.5 A each** under load/stall, plus ~0.5 A each for the three MG90S servos. Choose a **5 V 5 A (or 6 A)** supply with a DC barrel jack adapter to wire cleanly into the PCA9685 green screw terminal.
+* **Capacitor Polarity:** Solder or insert the **1000–2200 µF capacitor** into the empty through-hole pads labeled `C2` on the PCA9685 board—match the white stripe (`-` negative) to the `-` pad to absorb voltage drops when multiple servos move simultaneously.
+* **Common Ground & I²C Wiring:** Connect a ground (`GND`) wire between the **ESP32** and the **PCA9685** logic pins (`GND` to `GND`, `VCC` to `3.3V`, `SDA` to `GPIO 21`, `SCL` to `GPIO 22`), while keeping the servo `V+` power isolated on the external 5 V supply.
