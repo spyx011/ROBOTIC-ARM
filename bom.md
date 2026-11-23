@@ -1,4 +1,4 @@
-# Bill of Materials (BOM) – 6-Servo ESP32 & PCA9685 Project
+# Bill of Materials 
 
 | Item | Component | Specification / Notes | Qty | Unit | Buy Link (AliExpress) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -12,9 +12,3 @@
 | **8** | **Servo Mounting Hardware** | Aluminum U-brackets, multi-purpose brackets & M3 screws for MG995 | 1 | Set | [Search on AliExpress](https://fr.aliexpress.com/w/wholesale-mg995-servo-bracket.html) |
 
 ---
-
-## Assembly & Power Notes
-
-* **Power Supply Sizing:** Three MG995 servos can draw up to **1.2 A–1.5 A each** under load/stall, plus ~0.5 A each for the three MG90S servos. Choose a **5 V 5 A (or 6 A)** supply with a DC barrel jack adapter to wire cleanly into the PCA9685 green screw terminal.
-* **Capacitor Polarity:** Solder or insert the **1000–2200 µF capacitor** into the empty through-hole pads labeled `C2` on the PCA9685 board—match the white stripe (`-` negative) to the `-` pad to absorb voltage drops when multiple servos move simultaneously.
-* **Common Ground & I²C Wiring:** Connect a ground (`GND`) wire between the **ESP32** and the **PCA9685** logic pins (`GND` to `GND`, `VCC` to `3.3V`, `SDA` to `GPIO 21`, `SCL` to `GPIO 22`), while keeping the servo `V+` power isolated on the external 5 V supply.
